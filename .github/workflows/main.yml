@@ -22,6 +22,8 @@ jobs:
           local-testing: start
           local-identifier: random
 
+      - name: authorization
+        run: chmod +x entrypoint.sh
 
 
       - name: 'building the web application to be tested'
