@@ -13,7 +13,7 @@ jobs:
       - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
         uses: browserstack/github-actions/setup-env@master
         with:
-          username: ${{ secrets.BROWSERSTACK_USERNAME }}
+          username: user
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
 
       - name: 'BrowserStack Local Tunnel Setup'  # Invokes the setup-local action
@@ -26,6 +26,7 @@ jobs:
 
       - name: 'building the web application to be tested'
         run: entrypoint.sh
+        shell: bash
 
 
       - name: 'BrowserStackLocal Stop'  # Terminating the BrowserStackLocal tunnel connection
