@@ -23,11 +23,11 @@ jobs:
           local-identifier: random
 
       - name: authorization
-        run: chmod +x entrypoint.sh
+        run: chmod +x "${GITHUB_WORKSPACE}/entrypoint.sh"
 
 
       - name: 'building the web application to be tested'
-        run: entrypoint.sh
+        run: ${GITHUB_WORKSPACE}/entrypoint.sh
         shell: bash
 
 
